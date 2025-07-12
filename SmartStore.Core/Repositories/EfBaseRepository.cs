@@ -2,6 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using SmartStore.Core.Entities;
+using System.Linq.Expressions;
 
 namespace SmartStore.Core.Repositories
 {
@@ -32,7 +33,11 @@ namespace SmartStore.Core.Repositories
             return entity;
         }
 
-        public async Task<List<TEntity>> GetAllAsync()
+        public async Task<List<TEntity>> GetAllAsync(bool enableTracking = false,
+            bool withDeleted = false,
+            Expression<Func<TEntity, bool>>? filter = null,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+            CancellationToken cancellationToken = default)
         {
             return await _context.Set<TEntity>().ToListAsync(); 
         }
