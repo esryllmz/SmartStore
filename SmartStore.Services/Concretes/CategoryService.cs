@@ -81,12 +81,12 @@ namespace SmartStore.Services.Concretes
             };
         }
 
-        public async Task<ReturnModel<CategoryResponseDto>> UpdateAsync(int id, UpdateCategoryRequest request)
+        public async Task<ReturnModel<CategoryResponseDto>> UpdateAsync(UpdateCategoryRequest request)
         {
-            await _businessRules.IsCategoryExistAsync(id);
+            await _businessRules.IsCategoryExistAsync(request.Id);
             await _businessRules.IsNameUniqueAsync(request.Name);
 
-            Category? existingCategory= await _categoryRepository.GetByIdAsync(id);
+            Category? existingCategory= await _categoryRepository.GetByIdAsync(request.Id);
             existingCategory.Id = request.Id; 
             existingCategory.Name = request.Name;
          

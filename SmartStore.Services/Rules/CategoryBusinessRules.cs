@@ -24,7 +24,5 @@ namespace SmartStore.Services.Rules
 
 
 
-
-
     }
 }

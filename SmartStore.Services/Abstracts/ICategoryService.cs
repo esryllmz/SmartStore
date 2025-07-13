@@ -19,7 +19,7 @@ namespace SmartStore.Services.Abstracts
 
         Task<ReturnModel<CategoryResponseDto>> AddAsync(CreateCategoryRequest request);
 
-        Task<ReturnModel<CategoryResponseDto>> UpdateAsync(int id, UpdateCategoryRequest request);
+        Task<ReturnModel<CategoryResponseDto>> UpdateAsync(UpdateCategoryRequest request);
 
 
     }
