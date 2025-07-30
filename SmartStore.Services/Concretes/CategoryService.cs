@@ -15,6 +15,15 @@ namespace SmartStore.Services.Concretes
         private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
         private readonly CategoryBusinessRules _businessRules;
+
+        public CategoryService(ICategoryRepository categoryRepository,IMapper mapper,CategoryBusinessRules categoryBusinessRules)
+        {
+            _categoryRepository = categoryRepository;
+            _mapper = mapper;
+            _businessRules = categoryBusinessRules;
+
+        }
+
         public async Task<ReturnModel<CategoryResponseDto>> AddAsync(CreateCategoryRequest request)
         {
             await _businessRules.IsNameUniqueAsync(request.Name);

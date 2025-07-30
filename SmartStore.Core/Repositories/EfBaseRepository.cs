@@ -21,7 +21,7 @@ namespace SmartStore.Core.Repositories
         public async Task<TEntity> AddAsync(TEntity entity)
         {
             entity.CreatedTime = DateTime.Now;
-            _context.Set<TEntity>().Add(entity);
+            await _context.Set<TEntity>().AddAsync(entity);
             await _context.SaveChangesAsync();
             return entity;
         }

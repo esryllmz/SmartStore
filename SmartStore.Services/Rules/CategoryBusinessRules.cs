@@ -1,4 +1,5 @@
-﻿using SmartStore.DataAccess.Abstracts;
+﻿using SmartStore.Core.Exceptions;
+using SmartStore.DataAccess.Abstracts;
 
 namespace SmartStore.Services.Rules
 {
@@ -9,7 +10,7 @@ namespace SmartStore.Services.Rules
             var category = await categoryRepository.GetByIdAsync(id);
             if (category == null)
             {
-                throw new Exception($"Category with ID {id} does not exist.");
+                throw new NotFoundException($"Category with ID {id} does not exist.");
             }
         }
 
@@ -18,7 +19,7 @@ namespace SmartStore.Services.Rules
             var existingCategory = await categoryRepository.GetByNameAsync(name);
             if (existingCategory != null)
             {
-                throw new Exception($"Category with name '{name}' already exists.");
+                throw new BusinessException($"Category with name '{name}' already exists.");
             }
         }
 

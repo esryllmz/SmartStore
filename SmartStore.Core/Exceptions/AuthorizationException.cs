@@ -1,4 +1,12 @@
 ﻿namespace SmartStore.Core.Exceptions
 {
-    public class AuthorizationException(string message) : Exception(message);
+    public class AuthorizationException : Exception
+    {
+        public AuthorizationException(string message) : base(message)
+        {
+        }
+
+       
+    }
+
 }

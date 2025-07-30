@@ -3,9 +3,8 @@ using SmartStore.DataAccess.Abstracts;
 
 namespace SmartStore.Services.Rules
 {
-    public class ProductBusinessRules(IProductRepository productRepository)
+    public class ProductBusinessRules(IProductRepository _productRepository)
     {
-        private readonly IProductRepository _productRepository;
      
 
         public async Task IsProductExistAsync(int id)

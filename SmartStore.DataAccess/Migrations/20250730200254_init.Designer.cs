@@ -12,7 +12,7 @@ using SmartStore.DataAccess.Contexts;
 namespace SmartStore.DataAccess.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20250713205541_init")]
+    [Migration("20250730200254_init")]
     partial class init
     {
         /// <inheritdoc />
