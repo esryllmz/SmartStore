@@ -28,6 +28,9 @@ namespace SmartStore.Services.Extensions
 
             services.AddScoped<CategoryBusinessRules>();
             services.AddScoped<ProductBusinessRules>();
+            services.AddScoped<UserBusinessRules>();
+            services.AddScoped<RoleBusinessRules>();
+
 
             services.AddFluentValidationAutoValidation();
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());

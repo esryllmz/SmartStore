@@ -12,7 +12,7 @@ using SmartStore.DataAccess.Contexts;
 namespace SmartStore.DataAccess.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20250730200254_init")]
+    [Migration("20250801203455_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -237,6 +237,10 @@ namespace SmartStore.DataAccess.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()

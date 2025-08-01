@@ -23,8 +23,6 @@ builder.Services.AddDataAccessDependencies(builder.Configuration);
 builder.Services.AddServicesDependencies();
 
 
-
-
 builder.Services.Configure<TokenOption>(builder.Configuration.GetSection("TokenOption"));
 
 builder.Services.AddIdentity<User, IdentityRole>(opt =>
